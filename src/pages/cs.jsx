@@ -1,6 +1,19 @@
 import React, { Component } from "react"
 import { Document, Page } from 'react-pdf'
+import { graphql } from "gatsby"
 
+export const query = graphql`
+query resumeQuery {
+    contentfulResume {
+      name
+      media {
+        file {
+          url
+        }
+      }
+    }
+  }
+`
 class CSResume extends Component {
     state = {
         numPages: null,
@@ -12,12 +25,15 @@ class CSResume extends Component {
     }
 
     render() {
+        const file = this.props.data.contentfulResume;
+        console.log(file.name);
+
         const { pageNumber, numPages } = this.state;
 
         return (
             <div>
                 <Document
-                    file="somefile.pdf"
+                    file={file.media.file.url}
                     onLoadSuccess={this.onDocumentLoadSuccess}
                 >
                     <Page pageNumber={pageNumber} />
