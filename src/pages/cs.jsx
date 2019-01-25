@@ -1,16 +1,31 @@
-import React from "react"
-import styles from "../styles/index.module.scss"
+import React, { Component } from "react"
+import { Document, Page } from 'react-pdf'
 
-export default () => 
-<div className={styles.container}>
-    <a className={[styles.text, styles.csc].join(' ')} href="/cs">
-        <div className={styles.r}>> computer science</div>
-        <div className={styles.g}>> computer science</div>
-        <div className={styles.b}>> computer science</div>
-    </a>
-    <a className={[styles.text, styles.thd].join(' ')} href="/he">
-        <div className={styles.r}>> theatre arts</div>
-        <div className={styles.g}>> theatre arts</div>
-        <div className={styles.b}>> theatre arts</div>
-    </a>
-</div>
+class CSResume extends Component {
+    state = {
+        numPages: null,
+        pageNumber: 1,
+    }
+
+    onDocumentLoadSuccess = ({ numPages }) => {
+        this.setState({ numPages });
+    }
+
+    render() {
+        const { pageNumber, numPages } = this.state;
+
+        return (
+            <div>
+                <Document
+                    file="somefile.pdf"
+                    onLoadSuccess={this.onDocumentLoadSuccess}
+                >
+                    <Page pageNumber={pageNumber} />
+                </Document>
+                <p>Page {pageNumber} of {numPages}</p>
+            </div>
+        )
+    }
+}
+
+export default CSResume
