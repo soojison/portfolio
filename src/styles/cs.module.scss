@@ -1,0 +1,82 @@
+@import "./variables";
+.cs {
+  background-color: #fff;
+  font-family: "Exo", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+
+  .document {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.backlink {
+  position: fixed;
+  top: 0.8em;
+  left: 0.8em;
+  text-decoration: none;
+  color: #f0a202;
+  font-size: 3em;
+  background: transparent;
+  animation: pulse 2s infinite;
+  text-shadow: 0 0 0 rgba(224, 184, 37, 100);
+
+  &:hover {
+    animation: none;
+    .hovermsg {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.hovermsg {
+  @include transition(visibility 0s linear 0s, opacity 300ms);
+  visibility: hidden;
+  opacity: 0;
+
+  display: block;
+  position: relative;
+  padding: 0.5em;
+  border-radius: 3px;
+
+  font-size: 0.3em !important;
+  color: white;
+  background: rgba(63, 63, 63, 0.5);
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-bottom-color: rgba(63, 63, 63, 0.5);
+    border-top: 0;
+    margin-left: -8px;
+    margin-top: -8px;
+  }
+}
+
+.pageNumber {
+  font-size: 0.5em;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 0 rgba(224, 184, 37, 100), 0 0 0 rgba(224, 184, 37, 100), 0 0 0 rgba(224, 184, 37, 100);
+  }
+  70% {
+    text-shadow: 0 0 15px rgba(224, 184, 37, 0), 0 0 15px rgba(224, 184, 37, 0), 0 0 15px rgba(224, 184, 37, 0);
+  }
+  100% {
+    text-shadow: 0 0 0 rgba(224, 184, 37, 0), 0 0 0 rgba(224, 184, 37, 0), 0 0 0 rgba(224, 184, 37, 0);
+  }
+}

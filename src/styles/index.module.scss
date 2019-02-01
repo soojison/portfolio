@@ -39,6 +39,19 @@
   .thd {
     top: 53%;
   }
+  .name {
+    font-family: 'Exo', sans-serif;
+    font-weight: 900 !important;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 3em !important;
+    top: 35%;
+    > * {
+      animation: giggle 1s ease infinite;
+      mix-blend-mode: soft-light !important;
+    }
+  }
+
   .text > * {
     position: absolute;
     text-shadow: 0 0 10px #bfe7ff;
@@ -46,7 +59,7 @@
 
   .text {
     > * {
-      font-size: 2em;
+      font-size: 1.5em;
       animation: giggle 1s ease infinite;
       mix-blend-mode: lighten;
     }
@@ -62,6 +75,22 @@
       color: #00f;
       animation-delay: -0.33s;
       left: 0.5px;
+    }
+    .c {
+      color: #00FFFF;
+      left: -0.5px;
+    }
+    .m {
+      color: #FF00FF;
+      animation-delay: -0.67s;
+    }
+    .y {
+      color:#FFFF00;
+      animation-delay: -0.33s;
+      left: 0.5px;
+    }
+    .k {
+      color:#fff;
     }
   }
 }
