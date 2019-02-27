@@ -29,7 +29,7 @@ const bgStyle = (url) => ({
     color: 'white'
 })
 
-class CSResume extends Component {
+class ThdResume extends Component {
     state = {
         numPages: null,
         pageNumber: 1,
@@ -40,31 +40,35 @@ class CSResume extends Component {
     }
 
     render() {
-        const file = this.props.data.contentfulResume;
-        const pic = this.props.data.contentfulPicture
+      const file = this.props.data.contentfulResume;
+      const pic = this.props.data.contentfulPicture
 
-        const { pageNumber, numPages } = this.state;
+      const { pageNumber, numPages } = this.state;
 
-        return (
-            <div className={styles.cs} style={bgStyle(pic.photo.file.url)}>
-                <Link to="/" className={styles.backlink}>
-                    ★
-                    <span className={styles.hovermsg}>go back</span>
-                </Link>
-                <Document
-                    className={styles.document}
-                    file={file.media.file.url}
-                    onLoadSuccess={this.onDocumentLoadSuccess}
-                >
-                    <Page
-                        className={styles.page}
-                        pageNumber={pageNumber} />
-                    <p className={styles.pageNumber}>Page {pageNumber} of {numPages}</p>
-
-                </Document>
-            </div>
-        )
+      return (
+        <div className={styles.cs} style={bgStyle(pic.photo.file.url)}>
+        <Link to="/" className={styles.backlink}>
+        ★
+        <span className={styles.hovermsg}>go back</span>
+        </Link>
+        <Document
+          className={styles.document}
+          file={file.media.file.url}
+          onLoadSuccess={this.onDocumentLoadSuccess}
+        >
+        <Page
+          className={styles.page}
+          pageNumber={pageNumber} />
+        <p className={styles.pageNumber}>Page {pageNumber} of {numPages}</p>
+        </Document>
+        <a
+          className={styles.btn}
+          href={file.media.file.url}
+          target="_blank">Download PDF
+        </a>
+        </div>
+      )
     }
 }
 
-export default CSResume
+export default ThdResume
