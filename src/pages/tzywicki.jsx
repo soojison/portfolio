@@ -5,8 +5,8 @@ import WorkTemplate from "./worktemplate.jsx"
 export default props => (
   <StaticQuery
     query={graphql`
-      query thdExeQuery {
-        contentfulWorkDetail(contentful_id:{eq:"3BG7GmTcC7SOl6zXLultYU"}) {
+      query tzywickiQuery {
+        contentfulWorkDetail(contentful_id:{eq:"gdCE40bGBpJ1Ze9HBgcWE"}) {
           title
           poster {
             file {
@@ -31,7 +31,7 @@ export default props => (
       }
     `}
     render={data => (
-      <WorkTemplate
+     <WorkTemplate
         title={data.contentfulWorkDetail.title}
         header={data.contentfulWorkDetail.header.file.url}
         poster={data.contentfulWorkDetail.poster.file.url}
@@ -42,4 +42,3 @@ export default props => (
     )}
   />
 )
-

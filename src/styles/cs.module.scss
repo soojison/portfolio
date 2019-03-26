@@ -1,7 +1,7 @@
 @import "./variables";
 .cs {
   background-color: #fff;
-  font-family: "Exo", sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -80,7 +80,7 @@
   font-size: 0.3em !important;
   color: white;
   background: rgba(63, 63, 63, 0.5);
-  
+
   &::after {
     content: "";
     position: absolute;

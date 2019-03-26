@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   background: bisque;
-  font-family: "Exo", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .header {
@@ -24,6 +24,7 @@
 .blurb {
   font-size: 3em;
   padding: 3em;
+  font-weight: 300;
   margin: 0;
   text-align: center;
 }
@@ -37,7 +38,7 @@
   .element {
     flex: auto;
     width: 45%;
-  margin: 0 8px 8px 0; /* Some gutter */
+    margin: 0 8px 8px 0; /* Some gutter */
     position: relative;
     //margin: auto;
 
@@ -53,7 +54,8 @@
       box-sizing: border-box;
       color: white;
       font-weight: 900;
-      font-size: 3em;
+      font-style: italic;
+      font-size: 2em;
       overflow: hidden;
       padding: 0 1em;
       word-wrap: break-word;
