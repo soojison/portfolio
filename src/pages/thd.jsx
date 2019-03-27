@@ -43,7 +43,7 @@ class Theatre extends Component {
                     }
                 </div>
                 <div className={styles.footer}>
-                    <h1>bye</h1>
+                    <h1>Get in touch</h1>
                     <button>clicc</button>
                     <p>I did the design and code</p>
                 </div>

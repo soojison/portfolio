@@ -3,8 +3,9 @@
 .container {
   width: 100%;
   height: 100%;
-  background: bisque;
+  background: white;
   font-family: "Montserrat", sans-serif;
+  background: pink;
 }
 
 .header {
@@ -23,7 +24,7 @@
 
 .blurb {
   font-size: 3em;
-  padding: 3em;
+  padding: 200px;
   font-weight: 300;
   margin: 0;
   text-align: center;
@@ -32,14 +33,16 @@
 .flexbox {
     display: flex;
     flex-flow: row wrap;
-    margin-left: -8px; /* Adjustment for the gutter */
     width: 100%;
+    padding: 0 3em 200px 3em;
+    box-sizing: border-box;
 
   .element {
     flex: auto;
     width: 45%;
-    margin: 0 8px 8px 0; /* Some gutter */
+    margin: 1em; /* Some gutter */
     position: relative;
+    flex-grow: 1;
     //margin: auto;
 
     div {
@@ -80,6 +83,7 @@
   background: white;
   display: relative;
   padding: 3em;
+  text-align: center;
 
   h1 {
     display: block;
