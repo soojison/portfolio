@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import styles from "../styles/template.module.scss"
 import ImageZoom from 'react-medium-image-zoom'
+import marked from 'marked';
 
 class WorkTemplate extends Component {
   constructor(props) {
@@ -8,9 +9,15 @@ class WorkTemplate extends Component {
     this.state = {}
   }
 
+  getHtml = (markdown) => {
+    var raw = marked(markdown, {sanitize: true});
+    return { __html: raw };
+  }
+
   render() {
 
     var capacity = this.props.capacity.split(", ");
+    var descHtml = marked(this.props.desc, {sanitize: true});
 
     return (
       <div className={styles.container}>
@@ -45,7 +52,9 @@ class WorkTemplate extends Component {
         </div>
         <div className={styles.text}>
           <h2>{this.props.title}</h2>
-          <p className={styles.desc}>{this.props.desc}</p>
+          <p className={styles.desc}>
+            <div dangerouslySetInnerHTML={this.getHtml(this.props.desc)} />
+          </p>
           <ul className={styles.capacity}>
             {capacity.map((i) =>
               <li>{i}</li>
