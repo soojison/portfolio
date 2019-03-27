@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { graphql, StaticQuery } from "gatsby"
-import WorkTemplate from "./worktemplate.jsx"
+import WorkTemplate from "../worktemplate.jsx"
 
 export default props => (
   <StaticQuery

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import styles from "../styles/template.module.scss"
+import ImageZoom from 'react-medium-image-zoom'
 
 class WorkTemplate extends Component {
   constructor(props) {
@@ -19,10 +20,26 @@ class WorkTemplate extends Component {
       </div>
       <div className={styles.content}>
         <div className={styles.carousel}>
-          <img src={this.props.poster} alt="Poster"/>
+          <ImageZoom image={{
+            src: this.props.poster,
+            alt: 'Poster',
+          }}
+          zoomImage={{
+            src: this.props.poster,
+            alt: 'Poster'
+          }}
+      />
           {this.props.photos.map((pic,i) =>
             <a>
-              <img key={i} src={pic.file.url} alt="photos"/>
+            <ImageZoom image={{
+              src: pic.file.url,
+                alt: 'Photos',
+            }}
+            zoomImage={{
+              src: pic.file.url,
+                alt: 'Photos'
+            }}
+            />
             </a>
           )}
         </div>

@@ -36,7 +36,8 @@ class Theatre extends Component {
                 </h1>
                 <div className={styles.flexbox}>
                     {data.map((item,i) => 
-                        <a className={styles.element} key={i} href={item.node.link}>
+                        <a className={styles.element} key={i}
+                           href={`/thd${item.node.link}`}>
                             <img src={item.node.pic.file.url}></img>
                             <div>{item.node.name}</div>
                         </a>)
