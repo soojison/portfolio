@@ -20,7 +20,7 @@
     "gatsby-plugin-sharp": "^2.0.31",
     "gatsby-source-contentful": "^2.0.26",
     "gatsby-transformer-sharp": "^2.1.17",
-    "marked": "^0.6.1",
+    "marked": "^4.0.10",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-medium-image-zoom": "^3.0.15",
